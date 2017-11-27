@@ -27,16 +27,6 @@ mongoose.connect(
   }
 );
 
-const db = require("./models")
-const { Task } = db
-console.log(Task)
-
-app.post("api/saved", (req, res) => {
-	let article = req.body
-	console.log(article)
-})
-
-
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {

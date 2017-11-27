@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(routes);
+// app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
@@ -26,6 +26,16 @@ mongoose.connect(
     useMongoClient: true
   }
 );
+
+const db = require("./models")
+const { Task } = db
+console.log(Task)
+
+app.post("api/saved", (req, res) => {
+	let article = req.body
+	console.log(article)
+})
+
 
 // Send every request to the React app
 // Define any API routes before this runs

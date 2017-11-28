@@ -1,0 +1,10 @@
+.hero {
+	background-color: #D0011B;
+	height:100px;
+}
+.title {
+	color: 	#F8F8FF;
+	font-size: 36px;
+	font-style: "PT Sans Caption";
+	position: fixed;
+}

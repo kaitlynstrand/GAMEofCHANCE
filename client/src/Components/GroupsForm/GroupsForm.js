@@ -4,7 +4,7 @@ const GroupsForm = props => (
 <div>
 	<br></br>
 	<div className="field">
-		<label className="label">Groups</label>
+		<label className="label">Search Groups</label>
 			<div className="control">
 				<input className="input"></input>
 			</div>

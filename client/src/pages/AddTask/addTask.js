@@ -8,4 +8,4 @@ class AddTask extends Component {
 	}
 }
 
-export default AddTask;
+export default AddTask

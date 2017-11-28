@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
 class Group extends Component {
 	render() {
@@ -8,4 +8,4 @@ class Group extends Component {
 	}
 }
 
-export default Group;
+export default Group

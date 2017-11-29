@@ -3,10 +3,12 @@ import "./List.css";
 
 export const List = ({ children }) => {
   return (
-    <div className="list-overflow-container">
-      <ul className="list-group">
-        {children}
-      </ul>
+    <div className="card-table">
+    	<div className="content">
+      		<table className="table is-fullwidth is-striped">
+        		{children}
+      		</table>
+    	</div>
     </div>
   );
 };

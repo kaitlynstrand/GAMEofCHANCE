@@ -4,6 +4,20 @@ const SignUpForm = props => (
 <div>
 	<br></br>
 	<div className="field">
+		<label className="label">First Name</label>
+			<div className="control">
+				<input className="input"></input>
+			</div>
+	</div>
+
+	<div className="field">
+		<label className="label">Last Name</label>
+			<div className="control">
+				<input className="input"></input>
+			</div>
+	</div>
+
+	<div className="field">
 		<label className="label">Email</label>
 			<div className="control has-icons-left">
 				<input className="input" type="email"></input>
@@ -22,7 +36,21 @@ const SignUpForm = props => (
 					</span>
 			</div>
 	</div>
+
+	<div className="field">
+		<div className="control">
+			<label className="checkbox">
+				<input type="checkbox"></input>I agree to the <a href="#">terms and conditions</a>
+			</label>
+		</div>
+	</div>
+
+	<div className="field is-grouped">
+		<div className="control">
+			<button className="button"><a href="/groups">Submit</a></button>
+		</div>
+	</div>
 </div>
-)
+	)
 
 export default SignUpForm

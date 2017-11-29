@@ -15,22 +15,22 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="app">
-          <Header />
-            <div className="container">
-              <Route exact path="/" component={Home} />
-              <Route exact path="/group" component={Group} />
-              <Route exact path="/addTask" component={AddTask} />
-              <Route exact path="/tasks" component={Tasks} /> 
-              <Route exact path="/leaderboards" component={Leaderboards} /> 
-              <Route exact path="/claim" component={Claim} /> 
-              <Route exact path="/signin" component={SignIn} />
-              <Route exact path="/signup" component={SignUp} />
-            </div>
-        </div>
+      <div className="app">
+      <Header />
+      <div className="container">
+      <Route exact path="/" component={Home} />
+      <Route exact path="/group" component={Group} />
+      <Route exact path="/addTask" component={AddTask} />
+      <Route exact path="/tasks" component={Tasks} /> 
+      <Route exact path="/leaderboards" component={Leaderboards} /> 
+      <Route exact path="/claim" component={Claim} /> 
+      <Route exact path="/signin" component={SignIn} />
+      <Route exact path="/signup" component={SignUp} />
+      </div>
+      </div>
       </Router>
-    );
+      );
+    }
   }
-}
 
-export default App;
+  export default App;

@@ -17,13 +17,20 @@ class Tasks extends Component {
 	}
 
 	loadTasks = () => {
-		API.getTasks()
+		API.getCompleteTasks()
 		.then(res =>
 			this.setState({
 				tasks: res.data
 			})).catch(err => console.log(err))
 
 	}
+
+	completeTask = id => {
+		API.updateComplete(id)
+			.then(res => this.loadTasks())
+			.catch(err => console.log(err))
+	}
+	
 	render() {
 		return (
 			<div className="container">
@@ -35,7 +42,7 @@ class Tasks extends Component {
             					<td>{tasks.description}</td>
             					<td>{tasks.date_due}</td>
             					<td>{tasks.points}</td>
-            					<td><Btn onClick={() => this.claimTask(tasks._id)}>Completed</Btn></td>
+            					<td><Btn onClick={() => this.completeTask(tasks._id)}>Completed</Btn></td>
             				</tr>
             			</ListItem>
             			))}

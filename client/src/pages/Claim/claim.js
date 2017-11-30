@@ -17,7 +17,7 @@ class Claim extends Component {
 	}
 
 	loadTasks = () => {
-		API.getTasks()
+		API.getClaimTasks()
 		.then(res =>
 			this.setState({
 				tasks: res.data
@@ -25,10 +25,12 @@ class Claim extends Component {
 
 	}
 
-	// claimTask = () => {
-	// 	API.claimTask(id)
-	// 		.then(res => this.)
-	// }
+	claimTask = id => {
+		API.updateClaim(id)
+			.then(res => this.loadTasks())
+			.catch(err => console.log(err))
+	}
+
 	render() {
 		return (
 			<div className="container">
@@ -40,7 +42,8 @@ class Claim extends Component {
             					<td>{tasks.description}</td>
             					<td>{tasks.date_due}</td>
             					<td>{tasks.points}</td>
-            					<td><Btn onClick={() => this.claimTask(tasks._id)}>Claim</Btn></td>
+            					<td><Btn 
+            					onClick={() => this.claimTask(tasks._id)}>Claim</Btn></td>
             				</tr>
             			</ListItem>
             			))}

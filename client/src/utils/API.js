@@ -7,5 +7,8 @@ export default {
 	},
 	claimTasks: function(id) {
 		return axios.put("api/tasks" + id)
+	},
+	saveTasks: function(taskData) {
+		return axios.post("api/tasks", taskData)
 	}
 }

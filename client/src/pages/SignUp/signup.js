@@ -34,6 +34,9 @@ class SignUp extends Component {
 						<FormBtn><a href="/tasks">Submit</a></FormBtn>
 					</div>
 				</div>
+				<br>
+					<p>Already have an account?<a href="/signin">Sign In</a></p>
+    			<p>Or go <a href="/">Home</a></p>
 			</div>
 		)
 	}

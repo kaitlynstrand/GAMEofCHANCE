@@ -16,8 +16,6 @@ class SignIn extends Component {
     		});
   	};
 
-
-
 	render() {
 		return (
 		<div className="container">
@@ -50,6 +48,9 @@ class SignIn extends Component {
 					<FormBtn><a href="/groups">Submit</a></FormBtn>
 				</div>
 			</div>
+			<br>
+				<p>Create A New Account<a href="/signup">Sign Up</a></p>
+    		<p>Or go <a href="/">Home</a></p>
 		</div>
 		)
 	}

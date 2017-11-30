@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const flash = require("connect-flash");
 const passport = require("passport");
+const session = require("express-session");
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -26,13 +27,18 @@ mongoose.connect(
   }
 );
 
+//pass passport for configuration
+require('./config/passport')(passport);
 
+//setting up express app
 app.use(session({ secret: 'heyheywhatdyasay' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 // Send every request to the React app
-app.use(routes)(passport);
+//if doesn't work, use 
+require('./routes/api/users.js')(app, passport);
+
 // Define any API routes before this runs
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));

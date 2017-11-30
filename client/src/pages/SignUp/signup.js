@@ -3,6 +3,7 @@ import { Input, TextArea, FormBtn } from "../../Components/Form"
 
 class SignUp extends Component {
 		state = {
+			username: "",
 			email: "",
 			password: ""
 		}
@@ -34,7 +35,7 @@ class SignUp extends Component {
 						<FormBtn><a href="/tasks">Submit</a></FormBtn>
 					</div>
 				</div>
-				<br>
+				<br></br>
 					<p>Already have an account?<a href="/signin">Sign In</a></p>
     			<p>Or go <a href="/">Home</a></p>
 			</div>

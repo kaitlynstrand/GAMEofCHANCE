@@ -4,8 +4,11 @@ const Schema = mongoose.Schema
 
 const userSchema = new Schema({
 	local: {
-		email: { type: String, required: true },
-		password: { type: String, required: true }
+	username: { type: String, required: true },
+	email: { type: String, required: true },
+	phone: { type: String, required: false },
+	password: { type: String, required: true },
+	points_earned: { type: Number, required: false }
 	},
 
 	facebook: {
@@ -41,10 +44,3 @@ userSchema.methods.validPassword = password => {
 const User = mongoose.model("User", userSchema)
 
 module.exports = User
-
-first_name: { type: String, required: true },
-	last_name: { type: String, required: true },
-	email: { type: String, required: true },
-	phone: { type: String, required: false },
-	password: { type: String, required: true },
-	points_earned: { type: Number, required: false }

@@ -9,6 +9,21 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
+  findByClaim: function(req, res) {
+    db.Task
+      .find(req.query)
+      .where({claim: false})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err))
+  },
+  findByComplete: function(req, res) {
+    db.Task
+      .find(req.query)
+      .where({claim: true})
+      .where({complete: false})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err))
+  },
   findById: function(req, res) {
     db.Task
       .findById(req.params.id)
@@ -21,9 +36,15 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  update: function(req, res) {
+  updateClaim: function(req, res) {
     db.Task
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ _id: req.params.id }, {claim: true})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  updateComplete: function(req, res) {
+    db.Task
+      .findOneAndUpdate({ _id: req.params.id }, {complete: true})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

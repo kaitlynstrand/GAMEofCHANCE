@@ -1,6 +1,9 @@
 import React, { Component } from "react"
+import Cookies from "universal-cookie";
 import { Input, TextArea, FormBtn } from "../../Components/Form"
 import Header from "../../Components/Header"
+
+const cookies = new Cookies();
 
 class SignUp extends Component {
 		state = {
@@ -21,6 +24,12 @@ class SignUp extends Component {
 			<div>
 			<Header></Header>
 			<div className="container">
+				<label className="label">Username</label>
+					<Input 
+					type="username"
+					value={this.state.username}
+					name="username"
+					onChange={this.handleInputChange}/>
 				<label className="label">Email</label>
 					<Input 
 					type="email"

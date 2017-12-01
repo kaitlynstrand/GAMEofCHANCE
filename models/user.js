@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 
 const userSchema = new Schema({
 	local: {
-	username: { type: String, required: true },
-	email: { type: String, required: true },
+	username: { type: String, unique: true, required: true, trim: true },
+	email: { type: String, unique: true, required: true, trim: true },
 	phone: { type: String, required: false },
 	password: { type: String, required: true },
 	points_earned: { type: Number, required: false }

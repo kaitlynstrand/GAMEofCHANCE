@@ -4,6 +4,7 @@ import Header from "../../Components/Header"
 
 class SignUp extends Component {
 		state = {
+			username: "",
 			email: "",
 			password: ""
 		}
@@ -37,6 +38,9 @@ class SignUp extends Component {
 						<FormBtn><a href="/tasks">Submit</a></FormBtn>
 					</div>
 				</div>
+				<br></br>
+					<p>Already have an account?<a href="/signin">Sign In</a></p>
+    			<p>Or go <a href="/">Home</a></p>
 			</div>
 			</div>
 		)

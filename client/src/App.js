@@ -25,8 +25,8 @@ class App extends Component {
               <Route exact path="/signup" component={SignUp} />
         </div>
       </Router>
-    );
+      );
+    }
   }
-}
 
-export default App;
+  export default App;

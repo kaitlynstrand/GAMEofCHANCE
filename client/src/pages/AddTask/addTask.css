@@ -1,0 +1,11 @@
+@media screen and (max-width: 375px) {
+	.container {
+		margin-left:20px;
+	}
+	.control {
+		width:300px;
+	}
+	.button a {
+		color:black;
+	}
+}

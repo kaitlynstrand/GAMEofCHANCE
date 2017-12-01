@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Input, TextArea, FormBtn } from "../../Components/Form";
 import API from "../../utils/API"
 import Header from "../../Components/Header"
+import "./addTask.css"
 
 class AddTask extends Component {
 	state = {
@@ -18,7 +19,6 @@ class AddTask extends Component {
     }
 
     handleFormSubmit = event => {
-    	event.preventDefault();
     	if (this.state.description && this.state.date_due && this.state.points) {
     		API.saveTasks({
     			description: this.state.description,
@@ -35,6 +35,7 @@ class AddTask extends Component {
 			<div>
 			<Header></Header>
 			<div className="container">
+			<br></br>
 				<label className="label">Description</label>
 					<Input 
 					value={this.state.description}
@@ -53,9 +54,8 @@ class AddTask extends Component {
 					name="points"
 					onChange={this.handleInputChange}/>
 				<FormBtn
-				disabled={!(this.state.description && this.state.date_due && this.state.points)}
-				onClick={this.handleFormSubmit}>
-					Submit
+				onClick={this.handleFormSubmit}><a href="/claim">
+					Submit</a>
 				</FormBtn>
 			</div>
 			</div>

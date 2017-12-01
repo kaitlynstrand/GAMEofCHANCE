@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Input, TextArea, FormBtn } from "../../Components/Form"
+import Header from "../../Components/Header"
 
 class SignIn extends Component {
 	state = {
@@ -43,6 +44,9 @@ class SignIn extends Component {
 					<FormBtn><a href="/groups">Submit</a></FormBtn>
 				</div>
 			</div>
+		</div>
+		</div>
+		)
 				<br></br>
 			<p>Create A New Account <a href="/signup"> Sign Up</a></p>
 			<p>Or go <a href="/"> Home</a></p>

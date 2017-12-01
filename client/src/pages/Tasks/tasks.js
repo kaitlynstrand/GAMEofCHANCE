@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import Nav from "../../Components/Nav"
 import API from "../../utils/API";
+import { Input, TextArea, FormBtn } from "../../Components/Form"
 import { List, ListItem } from "../../Components/List"
 import Btn from "../../Components/Btn"
+import Header from "../../Components/Header"
 
 class Tasks extends Component {
 	state = {
@@ -33,6 +35,12 @@ class Tasks extends Component {
 	
 	render() {
 		return (
+			<div>
+			<Header>
+				<div className="buttons has-addons is-right">
+					<FormBtn><a href="/addTask">Add Task</a></FormBtn>
+				</div>
+			</Header>
 			<div className="container">
             	<Nav />
             	<List>
@@ -47,6 +55,7 @@ class Tasks extends Component {
             			</ListItem>
             			))}
       			</List>
+            </div>
             </div>
 		)
 	}

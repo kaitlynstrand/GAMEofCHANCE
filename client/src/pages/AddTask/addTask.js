@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Input, TextArea, FormBtn } from "../../Components/Form";
 import API from "../../utils/API"
+import Header from "../../Components/Header"
 
 class AddTask extends Component {
 	state = {
@@ -31,6 +32,8 @@ class AddTask extends Component {
 
 	render() {
 		return (
+			<div>
+			<Header></Header>
 			<div className="container">
 				<label className="label">Description</label>
 					<Input 
@@ -54,6 +57,7 @@ class AddTask extends Component {
 				onClick={this.handleFormSubmit}>
 					Submit
 				</FormBtn>
+			</div>
 			</div>
 		)
 	}

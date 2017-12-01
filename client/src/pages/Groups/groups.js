@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Input, TextArea, FormBtn } from "../../Components/Form"
+import Header from "../../Components/Header"
 
 class Group extends Component {
 	state = {
@@ -15,6 +16,8 @@ class Group extends Component {
   	};
 	render() {
 		return (
+			<div>
+			<Header></Header>
 			<div className="container">
 				<label className="label">Search Groups</label>
 					<Input 
@@ -26,6 +29,7 @@ class Group extends Component {
 					value={this.state.addGroup}
 					name="addGroup"
 					onChange={this.handleInputChange}/>
+			</div>
 			</div>
 			
 		)

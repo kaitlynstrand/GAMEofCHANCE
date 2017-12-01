@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Input, TextArea, FormBtn } from "../../Components/Form"
+import Header from "../../Components/Header"
 
 class SignUp extends Component {
 		state = {
@@ -16,6 +17,8 @@ class SignUp extends Component {
   		
 	render() {
 		return (
+			<div>
+			<Header></Header>
 			<div className="container">
 				<label className="label">Email</label>
 					<Input 
@@ -34,6 +37,7 @@ class SignUp extends Component {
 						<FormBtn><a href="/tasks">Submit</a></FormBtn>
 					</div>
 				</div>
+			</div>
 			</div>
 		)
 	}

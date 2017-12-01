@@ -6,6 +6,10 @@ export default {
 		return axios.get("api/tasks")
 	},
 
+	getUsers: function() {
+		return axios.get("api/users")
+	},
+
 	getClaimTasks: function() {
 		return axios.get("api/tasks/claim")
 	},
@@ -24,5 +28,5 @@ export default {
 
 	saveTasks: function(taskData) {
 		return axios.post("api/tasks", taskData)
-	}
+	},
 }

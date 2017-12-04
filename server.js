@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 const routes = require("./routes");
 
 app.use(cors());
-//app.use('/silent', staticFile('$__dirname}/silent.html'));
+
 app.use(routes)
 
 // Configure body parser for AJAX requests
@@ -35,6 +35,7 @@ mongoose.connect(
   }
 );
 
+app.use(routes)
 
 // Define any API routes before this runs
 app.get("*", function(req, res) {

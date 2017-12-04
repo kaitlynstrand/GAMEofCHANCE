@@ -15,6 +15,7 @@ module.exports = {
       .where({claim: false})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
+
   },
   findByComplete: function(req, res) {
     db.Task

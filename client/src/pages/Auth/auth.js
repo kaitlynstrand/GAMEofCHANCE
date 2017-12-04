@@ -1,16 +1,18 @@
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables.js.example';
-import history from '../history';
+import history from '../../history';
 
 export default class Auth {
   userProfile;
   tokenRenewalTimeout;
 
+
   auth0 = new auth0.WebAuth({
-    domain: AUTH_CONFIG.domain,
-    clientID: AUTH_CONFIG.clientId,
-    redirectUri: AUTH_CONFIG.callbackUrl,
-    audience: AUTH_CONFIG.apiUrl,
+    domain: 'gameofchance.auth0.com',
+    clientID: '9rIT0eKomzmv7q47VSRbySpfONYGL5e9',
+    redirectUri: 'http://localhost:3000/callback',
+    silentAuthRedirect: 'http://localhost:3001/silent',
+    audience: 'https://gameofchance.auth0.com/userinfo',
     responseType: 'token id_token',
     scope: 'openid profile'
   });

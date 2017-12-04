@@ -5,7 +5,7 @@ import API from "../../utils/API"
 class AddTask extends Component {
 	state = {
 		description: "",
-		date_due: "",
+		time_due: "",
 		points: ""
 	}
 
@@ -18,10 +18,10 @@ class AddTask extends Component {
 
     handleFormSubmit = event => {
     	event.preventDefault();
-    	if (this.state.description && this.state.date_due && this.state.points) {
+    	if (this.state.description && this.state.time_due && this.state.points) {
     		API.saveTasks({
     			description: this.state.description,
-    			date_due: this.state.date_due,
+    			time_due: this.state.time_due,
     			points: this.state.points
     		})
     		.then(res => console.log(res))
@@ -37,10 +37,10 @@ class AddTask extends Component {
 					value={this.state.description}
 					name="description"
 					onChange={this.handleInputChange} />
-				<label className="label">Due Date</label>
+				<label className="label">Time Due</label>
 					<Input
 					type="date"
-					value={this.state.date_due}
+					value={this.state.time_due}
 					name="date_due"
 					onChange={this.handleInputChange}/>
 				<label className="label">Points</label>
@@ -50,7 +50,7 @@ class AddTask extends Component {
 					name="points"
 					onChange={this.handleInputChange}/>
 				<FormBtn
-				disabled={!(this.state.description && this.state.date_due && this.state.points)}
+				disabled={!(this.state.description && this.state.time_due && this.state.points)}
 				onClick={this.handleFormSubmit}>
 					Submit
 				</FormBtn>

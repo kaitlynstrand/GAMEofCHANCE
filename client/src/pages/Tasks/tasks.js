@@ -7,7 +7,7 @@ class Tasks extends Component {
 	state = {
 		tasks: [],
 		description: "",
-		dueDate: "",
+		time_due: "",
 		points: "",
 	}
 
@@ -32,7 +32,7 @@ class Tasks extends Component {
             			<ListItem key={tasks._id}>
             				<tr>
             					<td>{tasks.description}</td>
-            					<td>{tasks.dueDate}</td>
+            					<td>{tasks.time_due}</td>
             					<td>{tasks.points}</td>
             				</tr>
             			</ListItem>

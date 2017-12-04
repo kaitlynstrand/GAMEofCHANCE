@@ -12,21 +12,21 @@ mongoose.connect(
 const taskSeed = [
 	{
 		description: "take out garbage",
-		date_due: 10102017,
+		time_due: 10102017,
 		points: 8,
 		claim: false,
 		complete: false
 	},
 	{
 		description: " fold laundry",
-		date_due: 12252017,
+		time_due: 12252017,
 		points: 11,
 		claim: false,
 		complete: false
 	},
 	{
 		description: "clean bathroom",
-		date_due: 11302017,
+		time_due: 11302017,
 		points: 22,
 		claim: false,
 		complete: false

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const taskSchema = new Schema({
 	description: { type: String, required: true },
-	date_due: { type: Date, required: true },
+	time_due: { type: Date, required: true },
 	points: { type: Number, required: true },
 	claim: { type: Boolean, default: false},
 	complete: { type: Boolean, default: false}

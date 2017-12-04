@@ -9,8 +9,16 @@ import SignUp from "./pages/SignUp"
 import Leaderboards from "./pages/Leaderboards"
 import Tasks from "./pages/Tasks"
 import Claim from "./pages/Claim"
-import Auth from "./Auth/auth.js"
+import Auth from "./Auth"
+import Callback from "./Callback"
 
+const auth = new Auth();
+
+const handleAuthentication = (nextState, replace) => {
+  if (/access_token|id_token|error/.test(nextState.location.hash)) {
+    auth.handleAuthentication();
+  }
+};
 
 class App extends Component {
   render() {
@@ -27,6 +35,8 @@ class App extends Component {
       <Route exact path="/claim" component={Claim} /> 
       <Route exact path="/signin" component={SignIn} />
       <Route exact path="/signup" component={SignUp} />
+      <Route exact path="/auth" component={Auth} />
+      <Route exact path="/callback" component={Callback} />
       </div>
       </div>
       </Router>

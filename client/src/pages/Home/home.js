@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import App from '../App';
+import API from "../../utils/API";
+import Auth from "../Auth";
+import App from "../../App"
 
 class Home extends Component {
   // calls the login method in authentication service
@@ -12,8 +14,8 @@ class Home extends Component {
   }
   render() {
     // calls the isAuthenticated method in authentication service
-    const { isAuthenticated } = this.props.auth;
-    return (
+const { isAuthenticated } = this.props.auth;    
+  return (
       <div>
         {
           isAuthenticated() &&
@@ -24,7 +26,6 @@ class Home extends Component {
                 style={{ cursor: 'pointer' }}
                 onClick={this.logout}>Log Out</a>.
             </h5>
-            <App />
           </div>
         }
         {
@@ -43,7 +44,7 @@ class Home extends Component {
           )
         }
       </div>
-      );
+    )
     }
   }
 

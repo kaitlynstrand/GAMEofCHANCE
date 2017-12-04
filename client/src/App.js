@@ -8,8 +8,8 @@ import SignUp from "./pages/SignUp"
 import Leaderboards from "./pages/Leaderboards"
 import Tasks from "./pages/Tasks"
 import Claim from "./pages/Claim"
-import Auth from "./Auth/auth"
-import Callback from "./Callback/callback"
+import Auth from "./pages/Auth"
+import Callback from "./pages/Callback"
 
 const auth = new Auth();
 
@@ -25,7 +25,7 @@ class App extends Component {
       <Router>
       <div className="app">
       <div className="container">
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
       <Route exact path="/group" component={Group} />
       <Route exact path="/addTask" component={AddTask} />
       <Route exact path="/tasks" component={Tasks} /> 
@@ -33,8 +33,11 @@ class App extends Component {
       <Route exact path="/claim" component={Claim} /> 
       <Route exact path="/signin" component={SignIn} />
       <Route exact path="/signup" component={SignUp} />
-      <Route exact path="/auth" component={Auth} />
-      <Route exact path="/callback" component={Callback} />
+      <Route exact path="/home" render={(props) => <Home auth={auth} {...props} />} />
+      <Route exact path="/callback" render ={(props) => {
+        handleAuthentication(props);
+        return <Callback {...props} />
+      }}/>
       </div>
       </div>
 

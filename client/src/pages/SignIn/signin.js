@@ -31,27 +31,27 @@ class SignIn extends Component {
 						value={this.state.password}
 						name="password"
 						onChange={this.handleInputChange}/>
-			<div className="field">
-				<div className="control">
-					<label className="checkbox">
-						<input type="checkbox"></input>I agree to the <a href="#">terms and conditions</a>
-					</label>
-			</div>
-		</div>
-			<div className="field is-grouped">
-				<div className="control">
-					<FormBtn><a href="/groups">Submit</a></FormBtn>
+				<div className="field">
+					<div className="control">
+						<label className="checkbox">
+							<input type="checkbox"></input>I agree to the <a href="#">terms and conditions</a>
+						</label>
+					</div>
+				</div>
+				<div className="field is-grouped">
+					<div className="control">
+						<FormBtn><a href="/groups">Submit</a></FormBtn>
+					</div>
+				</div>
+				<div>
+					<p>Create A New Account <a href="/signup"> Sign Up</a></p>
+				</div>
+				<div>
+					<p>Or go <a href="/"> Home</a></p>
 				</div>
 			</div>
-		</div>
-		</div>
 		)
-				<br></br>
-			<p>Create A New Account <a href="/signup"> Sign Up</a></p>
-			<p>Or go <a href="/"> Home</a></p>
-			</div>
-			)
-		}
 	}
+}
 
-	export default SignIn
+export default SignIn

@@ -12,7 +12,7 @@ const routes = require("./routes");
 
 const strategy = new Auth0Strategy(
 {
-	domain: 'https://gameofchance.auth0.com',
+	domain: 'gameofchance.auth0.com',
 	clientID: '9rIT0eKomzmv7q47VSRbySpfONYGL5e9',
 	clientSecret: 'RLKhBawaE-UlmYzgn_j56WXAEZ0pdwrA2HcDPR0F6dkcWlW-o3qQCJMHJ2vtJ--q',
 	callbackURL: 'http://localhost:3000/callback'

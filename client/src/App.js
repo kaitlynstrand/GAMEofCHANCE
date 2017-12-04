@@ -8,8 +8,8 @@ import SignUp from "./pages/SignUp"
 import Leaderboards from "./pages/Leaderboards"
 import Tasks from "./pages/Tasks"
 import Claim from "./pages/Claim"
-import Auth from "./Auth"
-import Callback from "./Callback"
+import Auth from "./Auth/auth"
+import Callback from "./Callback/callback"
 
 const auth = new Auth();
 
@@ -24,7 +24,6 @@ class App extends Component {
     return (
       <Router>
       <div className="app">
-      <Header />
       <div className="container">
       <Route exact path="/" component={Home} />
       <Route exact path="/group" component={Group} />

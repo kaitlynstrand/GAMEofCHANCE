@@ -3,7 +3,6 @@ const passport = require('passport');
 const router = express.Router();
 const path = require("path");
 const apiRoutes = require("./api");
-const passport = require('passport');
 
 // API Routes
 router.use("/api", apiRoutes);

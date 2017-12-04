@@ -11,8 +11,9 @@ class Claim extends Component {
 	state = {
 		tasks: [],
 		description: "",
-		date_due: "",
-		points: ""
+		time_due: "",
+		points: "",
+
 	}
 
 	componentDidMount() {
@@ -49,7 +50,7 @@ class Claim extends Component {
             			<ListItem key={tasks._id}>
             				<tr>
             					<td>{tasks.description}</td>
-            					<td>{tasks.date_due}</td>
+            					<td>{tasks.time_due}</td>
             					<td>{tasks.points}</td>
             					<td><Btn 
             					onClick={() => this.claimTask(tasks._id)}>Claim</Btn></td>

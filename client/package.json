@@ -8,6 +8,7 @@
     "bcrypt-nodejs": "0.0.3",
     "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",
+    "moment": "^2.19.3",
     "passport": "^0.4.0",
     "passport-auth0": "^0.6.0",
     "passport-facebook": "^2.1.1",

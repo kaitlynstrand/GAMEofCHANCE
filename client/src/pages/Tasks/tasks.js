@@ -11,7 +11,7 @@ class Tasks extends Component {
 	state = {
 		tasks: [],
 		description: "",
-		date_due: "",
+		time_due: "",
 		points: "",
 	}
 
@@ -50,7 +50,8 @@ class Tasks extends Component {
             			<ListItem key={tasks._id}>
             				<tr>
             					<td>{tasks.description}</td>
-            					<td>{tasks.date_due}</td>
+            					<td>{tasks.time_due}</td>
+
             					<td>{tasks.points}</td>
             					<td><Btn onClick={() => this.completeTask(tasks._id)}>Completed</Btn></td>
             				</tr>

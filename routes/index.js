@@ -18,7 +18,7 @@ const router = express.Router();
 
 const env = {
   AUTH0_CLIENT_ID: 'YOUR_CLIENT_ID',
-  AUTH0_DOMAIN: 'YOUR_AUTH0_DOMAIN',
+  AUTH0_DOMAIN: '',
   AUTH0_CALLBACK_URL: 'http://localhost:3000/callback'
 };
 
@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 
 // Perform the login
 router.get(
-  '/login',
+  '/signin',
   passport.authenticate('auth0', {
     clientID: env.AUTH0_CLIENT_ID,
     domain: env.AUTH0_DOMAIN,

@@ -7,7 +7,6 @@ class SignIn extends Component {
 		username: "",
 		email: "",
 		password: "",
-
 	}
 
 	handleInputChange = event => {

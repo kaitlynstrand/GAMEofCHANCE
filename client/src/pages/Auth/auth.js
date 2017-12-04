@@ -14,7 +14,7 @@ export default class Auth {
     silentAuthRedirect: 'http://localhost:3001/silent',
     audience: 'https://gameofchance.auth0.com/userinfo',
     responseType: 'token id_token',
-    scope: 'openid profile'
+    scope: 'openid profile read:messages'
   });
 
   constructor() {
@@ -35,9 +35,9 @@ export default class Auth {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        history.replace('/home');
+        history.replace('/leaderboards');
       } else if (err) {
-        history.replace('/home');
+        history.replace('/leaderboards');
         console.log(err);
         alert(`Error: ${err.error}. Check console for more details.`);
       }

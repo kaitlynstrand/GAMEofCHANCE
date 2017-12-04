@@ -44,7 +44,7 @@ class AddTask extends Component {
 					<Input
 					type="date"
 					value={this.state.time_due}
-					name="date_due"
+					name="time_due"
 					onChange={this.handleInputChange}/>
 				<label className="label">Points</label>
 					<Input 

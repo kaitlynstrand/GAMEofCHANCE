@@ -29,4 +29,12 @@ export default {
 	saveTasks: function(taskData) {
 		return axios.post("api/tasks", taskData)
 	},
+	securedPing: function() {
+		const { getAccessToken } = this.props.auth
+		const API_URL = 'https://gameofchance.auth0.com/api/v2';
+    	const headers = { 'Authorization': `Bearer ${getAccessToken()}`}
+    	axios.get(`${API_URL}/private`, { headers })
+      		.then(response => this.setState({ message: response.data.message }))
+      		.catch(error => this.setState({ message: error.message }));
+  }
 }

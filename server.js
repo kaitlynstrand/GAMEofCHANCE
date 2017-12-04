@@ -12,12 +12,13 @@ const routes = require("./routes");
 
 app.use(cors());
 
+app.use(routes)
+
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //setting up express app
-app.use(require('morgan')('dev'));
 app.use(flash());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {

@@ -29,6 +29,11 @@ export default {
 	saveTasks: function(taskData) {
 		return axios.post("api/tasks", taskData)
 	},
+
+	saveGroups: function(groupData) {
+		return axios.post("api/groups", groupsData)
+	},
+	
 	securedPing: function() {
 		const { getAccessToken } = this.props.auth
 		const API_URL = 'https://gameofchance.auth0.com/api/v2';

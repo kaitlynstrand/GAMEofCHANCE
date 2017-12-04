@@ -14,6 +14,15 @@ class Group extends Component {
       			[name]: value
     		});
   	};
+
+  	handleFormSubmit = event => {
+  		event.preventDefault()
+  		if (this.state.addGroup) {
+  			API.saveGroups({
+  				group: this.state.addGroup
+  			})
+  		}
+  	}
 	render() {
 		return (
 			<div>

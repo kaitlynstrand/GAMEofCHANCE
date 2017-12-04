@@ -1,8 +1,7 @@
 import React, { Component } from "react"
-import Cookies from "universal-cookie";
 import { Input, TextArea, FormBtn } from "../../Components/Form"
 
-const cookies = new Cookies();
+
 
 class SignUp extends Component {
 		state = {

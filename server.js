@@ -1,5 +1,6 @@
 const app = express();
 const bodyParser = require("body-parser");
+const cors = require('cors');
 const express = require("express");
 const flash = require("connect-flash");
 const mongoose = require("mongoose");
@@ -11,9 +12,9 @@ const routes = require("./routes");
 
 const strategy = new Auth0Strategy(
 {
-	domain: 'YOUR_AUTH0_DOMAIN',
-	clientID: 'YOUR_CLIENT_ID',
-	clientSecret: 'YOUR_CLIENT_SECRET',
+	domain: 'https://gameofchance.auth0.com',
+	clientID: '9rIT0eKomzmv7q47VSRbySpfONYGL5e9',
+	clientSecret: 'RLKhBawaE-UlmYzgn_j56WXAEZ0pdwrA2HcDPR0F6dkcWlW-o3qQCJMHJ2vtJ--q',
 	callbackURL: 'http://localhost:3000/callback'
 }
 (accessToken, refreshToken, extraParams, profile, done) => {
@@ -29,13 +30,15 @@ passport.deserializeUser(function(user, done) {
 	done(null, user);
 });
 
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport(initialize));
+app.use(cors());
+app.use('/silent', staticFile('$__dirname}/silent.html'));
+
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cookieParser());
+
 //setting up express app
 app.use(require('morgan')('dev'));
 app.use(flash());

@@ -5,6 +5,7 @@ import { Input, TextArea, FormBtn } from "../../Components/Form"
 import { List, ListItem } from "../../Components/List"
 import Btn from "../../Components/Btn"
 import Header from "../../Components/Header"
+import "../Tasks/main.css"
 
 class Claim extends Component {
 	state = {

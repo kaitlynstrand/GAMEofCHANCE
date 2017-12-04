@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import App from '../App';
 
+
 class Home extends Component {
   // calls the login method in authentication service
   login = () => {

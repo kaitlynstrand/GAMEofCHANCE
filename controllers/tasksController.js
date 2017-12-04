@@ -12,6 +12,7 @@ module.exports = {
   findByClaim: function(req, res) {
     db.Task
       .find(req.query)
+      .sort({date_due: 1})
       .where({claim: false})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
@@ -19,6 +20,7 @@ module.exports = {
   findByComplete: function(req, res) {
     db.Task
       .find(req.query)
+      .sort({date_due: 1})
       .where({claim: true})
       .where({complete: false})
       .then(dbModel => res.json(dbModel))

@@ -5,6 +5,7 @@ import { Input, TextArea, FormBtn } from "../../Components/Form"
 import { List, ListItem } from "../../Components/List"
 import Btn from "../../Components/Btn"
 import Header from "../../Components/Header"
+import "./main.css"
 
 class Tasks extends Component {
 	state = {
@@ -23,7 +24,8 @@ class Tasks extends Component {
 		.then(res =>
 			this.setState({
 				tasks: res.data
-			})).catch(err => console.log(err))
+			}))
+		.catch(err => console.log(err))
 
 	}
 

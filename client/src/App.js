@@ -8,6 +8,7 @@ import SignUp from "./pages/SignUp"
 import Leaderboards from "./pages/Leaderboards"
 import Tasks from "./pages/Tasks"
 import Claim from "./pages/Claim"
+import Auth from "./Auth/auth.js"
 
 
 class App extends Component {
@@ -30,3 +31,5 @@ class App extends Component {
   }
 
   export default App;
+
+

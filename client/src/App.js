@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from "react-router-dom"
-import Header from "./Components/Header"
 import Home from "./pages/Home"
 import Group from "./pages/Groups"
 import AddTask from "./pages/AddTask"
@@ -39,6 +38,7 @@ class App extends Component {
       <Route exact path="/callback" component={Callback} />
       </div>
       </div>
+
       </Router>
       );
     }

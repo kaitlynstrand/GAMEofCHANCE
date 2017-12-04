@@ -3,6 +3,7 @@ import { Input, TextArea, FormBtn } from "../../Components/Form";
 import API from "../../utils/API"
 import Header from "../../Components/Header"
 
+
 class AddTask extends Component {
 	state = {
 		description: "",
@@ -53,7 +54,6 @@ class AddTask extends Component {
 					name="points"
 					onChange={this.handleInputChange}/>
 				<FormBtn
-				disabled={!(this.state.description && this.state.time_due && this.state.points)}
 				onClick={this.handleFormSubmit}>
 					Submit
 				</FormBtn>

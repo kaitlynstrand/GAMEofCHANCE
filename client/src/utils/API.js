@@ -9,6 +9,9 @@ export default {
 	getUsers: function() {
 		return axios.get("api/users")
 	},
+	updatePoints: function(id) {
+		return axios.put("api/users/points_earned/" + id)
+	},
 
 	getClaimTasks: function() {
 		return axios.get("api/tasks/claim")

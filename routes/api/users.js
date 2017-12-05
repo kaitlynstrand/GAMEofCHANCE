@@ -5,6 +5,10 @@ const usersController = require("../../controllers/usersController");
 router.route("/")
   .get(usersController.findAll)
 
+ router.route("/points_earned/:id")
+   	.get(usersController.findById)
+ 	.put(usersController.updatePoints)
+
 // Matches with "/api/users/:id"
 router
   .route("/:id")

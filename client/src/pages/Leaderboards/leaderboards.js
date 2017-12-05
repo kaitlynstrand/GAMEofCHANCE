@@ -1,9 +1,8 @@
 import React, { Component } from "react"
 import Nav from "../../Components/Nav"
 import API from "../../utils/API";
-import { Input, TextArea, FormBtn } from "../../Components/Form"
+import { FormBtn } from "../../Components/Form"
 import { List, ListItem } from "../../Components/List"
-import Btn from "../../Components/Btn"
 import Header from "../../Components/Header"
 
 class Leaderboards extends Component {

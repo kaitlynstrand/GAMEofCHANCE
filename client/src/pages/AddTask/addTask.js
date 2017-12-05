@@ -27,7 +27,7 @@ class AddTask extends Component {
     			time_due: this.state.time_due,
     			points: this.state.points
     		})
-    		.then(res => console.log(res))
+    		.then(window.location.href = "/claim")
     		.catch(err => console.log(err))
     	}
     }
@@ -48,7 +48,8 @@ class AddTask extends Component {
 					value={this.state.time_due}
 					name="time_due"
 					onChange={this.handleInputChange}/>
-					<TimeDue></TimeDue>
+					<TimeDue value={this.state.time_due}>
+</TimeDue>
 				<label className="label">Points</label>
 					<Input 
 					type="tel"

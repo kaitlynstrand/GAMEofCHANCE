@@ -13,6 +13,10 @@ export default {
 		return axios.put("api/users/points_earned/" + id)
 	},
 
+	getGroups: function() {
+		return axios.get("api/groups")
+	},
+
 	getClaimTasks: function() {
 		return axios.get("api/tasks/claim")
 	},
@@ -32,9 +36,9 @@ export default {
 	saveTasks: function(taskData) {
 		return axios.post("api/tasks", taskData)
 	},
-
-	saveGroups: function(groupData) {
-		return axios.post("api/groups", groupData)
+	
+	saveGroups: function(groupsData) {
+		return axios.post("api/groups", groupsData)
 	},
 	
 	securedPing: function() {
@@ -44,5 +48,5 @@ export default {
     	axios.get(`${API_URL}/private`, { headers })
       		.then(response => this.setState({ message: response.data.message }))
       		.catch(error => this.setState({ message: error.message }));
-  }
+  	}
 }

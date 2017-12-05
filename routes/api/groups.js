@@ -6,9 +6,9 @@ router.route("/")
   .get(groupsController.findAll)
   .post(groupsController.create)
 
-// Matches with "/api/groups/:id"
-router.route("/:id")
-  .get(groupsController.findById)
+// Matches with "/api/groups/:name"
+router.route("/:name")
+  .get(groupsController.findByName)
   .put(groupsController.update)
   .delete(groupsController.remove)
 

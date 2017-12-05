@@ -35,9 +35,9 @@ export default class Auth {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        history.replace('/leaderboards');
+        history.replace('/tasks');
       } else if (err) {
-        history.replace('/leaderboards');
+        history.replace('/tasks');
         console.log(err);
         alert(`Error: ${err.error}. Check console for more details.`);
       }

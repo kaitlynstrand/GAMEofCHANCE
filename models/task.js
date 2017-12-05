@@ -7,6 +7,7 @@ const taskSchema = new Schema({
 	points: { type: Number, required: true },
 	claim: { type: Boolean, default: false},
 	complete: { type: Boolean, default: false}
+	
 })
 
 const Task = mongoose.model("Task", taskSchema)

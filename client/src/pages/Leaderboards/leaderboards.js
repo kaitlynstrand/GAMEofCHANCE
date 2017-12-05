@@ -18,7 +18,7 @@ class Leaderboards extends Component {
 
 	loadUsers = () => {
 		API.getUsers()
-		.then(res => 
+		.then(res =>
 			this.setState({
 				users: res.data
 			})).catch(err => console.log(err))

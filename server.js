@@ -12,8 +12,6 @@ const routes = require("./routes");
 
 app.use(cors());
 
-app.use(routes)
-
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

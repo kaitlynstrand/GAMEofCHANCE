@@ -10,6 +10,10 @@ export default {
 		return axios.get("api/users")
 	},
 
+	getGroups: function() {
+		return axios.get("api/groups")
+	},
+
 	getClaimTasks: function() {
 		return axios.get("api/tasks/claim")
 	},
@@ -30,7 +34,7 @@ export default {
 		return axios.post("api/tasks", taskData)
 	},
 
-	saveGroups: function(groupData) {
+	saveGroups: function(groupsData) {
 		return axios.post("api/groups", groupsData)
 	},
 	
@@ -41,5 +45,5 @@ export default {
     	axios.get(`${API_URL}/private`, { headers })
       		.then(response => this.setState({ message: response.data.message }))
       		.catch(error => this.setState({ message: error.message }));
-  }
+  	}
 }

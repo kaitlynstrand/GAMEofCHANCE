@@ -24,21 +24,16 @@ class App extends Component {
     return (
       <Router>
       <div className="app">
-      <div className="container">
       <Route exact path="/" render={(props) => <Home auth={auth} {...props} />} />
       <Route exact path="/group" component={Group} />
       <Route exact path="/addTask" component={AddTask} />
       <Route exact path="/tasks" component={Tasks} /> 
       <Route exact path="/leaderboards" component={Leaderboards} /> 
       <Route exact path="/claim" component={Claim} /> 
-      <Route exact path="/signin" component={SignIn} />
-      <Route exact path="/signup" component={SignUp} />
-      <Route exact path="/home" render={(props) => <Home auth={auth} {...props} />} />
       <Route exact path="/callback" render ={(props) => {
         handleAuthentication(props);
         return <Callback {...props} />
       }}/>
-      </div>
       </div>
 
       </Router>

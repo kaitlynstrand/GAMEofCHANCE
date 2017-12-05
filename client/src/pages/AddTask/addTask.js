@@ -26,7 +26,7 @@ class AddTask extends Component {
     			time_due: this.state.time_due,
     			points: this.state.points
     		})
-    		.then(res => console.log(res))
+    		.then(window.location.href = "/claim")
     		.catch(err => console.log(err))
     	}
     }

@@ -17,14 +17,12 @@ class Leaderboards extends Component {
 		this.loadUsers()
 	}
 
-	loadUsers() {
+	loadUsers = () => {
 		API.getUsers()
-		.then(res => {
+		.then(res =>
 			this.setState({
 				users: res.data
-			})
-
-			}).catch(err => console.log(err))
+			})).catch(err => console.log(err))
 	}
 
 	render() {
@@ -38,7 +36,7 @@ class Leaderboards extends Component {
 			<div className="container">
             	<Nav />
             	<List>
-            		{(this.state.users || []).map(users => {
+            		{this.state.users.map(users => {
             			<ListItem key={users._id}>
             				<tr>
             					<td>{users.name}</td>

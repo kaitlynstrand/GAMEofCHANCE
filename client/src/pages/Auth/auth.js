@@ -23,7 +23,6 @@ export default class Auth {
     this.handleAuthentiction = this.handleAuthentication.bind(this);
     this.isAuthenticated = this.isAuthenticated.bind(this);
     this.getAccessToken = this.getAccessToken.bind(this);
-    this.getProfile = this.getProfile.bind(this);
     this.scheduleRenewal();
   }
 
@@ -37,7 +36,7 @@ export default class Auth {
         this.setSession(authResult);
         history.replace('/tasks');
       } else if (err) {
-        history.replace('/tasks');
+        history.replace('/callback');
         console.log(err);
         alert(`Error: ${err.error}. Check console for more details.`);
       }
@@ -62,16 +61,6 @@ export default class Auth {
       throw new Error('No access token found');
     }
     return accessToken;
-  }
-
-  getProfile(cb) {
-    let accessToken = this.getAccessToken();
-    this.auth0.client.userInfo(accessToken, (err, profile) => {
-      if (profile) {
-        this.userProfile = profile;
-      }
-      cb(err, profile);
-    });
   }
 
   logout() {

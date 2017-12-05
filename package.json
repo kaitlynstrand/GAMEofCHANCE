@@ -6,7 +6,7 @@
   "scripts": {
     "server": "node server.js",
     "client": "cd client && npm run start",
-    "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
+    "start": "./node_modules/.bin/concurrently \"nodemon\" \"npm run client\"",
     "build": "cd client && npm run build",
     "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,8 +29,10 @@
     "express-session": "^1.15.6",
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.19.3",
+    "moment-es6": "^1.0.0",
     "mongoose": "^4.13.5",
     "morgan": "^1.9.0",
+    "node-mongo-seeds": "^2.3.1",
     "passport": "^0.4.0",
     "passport-auth0": "^0.6.0",
     "passport-facebook": "^2.1.1",
@@ -41,6 +43,7 @@
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0",
+    "react-moment-countdown": "^0.1.0",
     "react-router-dom": "^4.2.2",
     "react-select": "^1.1.0",
     "seed": "^0.4.4",

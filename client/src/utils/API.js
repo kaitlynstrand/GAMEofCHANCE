@@ -33,7 +33,7 @@ export default {
 	saveTasks: function(taskData) {
 		return axios.post("api/tasks", taskData)
 	},
-
+	
 	saveGroups: function(groupsData) {
 		return axios.post("api/groups", groupsData)
 	},

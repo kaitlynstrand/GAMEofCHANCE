@@ -11,21 +11,21 @@ mongoose.connect(
 
 const userSeed = [
 	{
-		username: "k_strand"
+		username: "k_strand",
 		email: "kaitlyn.strand@gmail.com",
 		phone: "224-622-0800",
 		password: "NDcheer",
 		points_earned: "28"
 	},
 	{
-		username: "madmax"
+		username: "madmax",
 		email: "mnteibel@gmail.com",
 		phone: "555-555-5555",
 		password: "raft4lyfe",
 		points_earned: "101"
 	},
 	{
-		username: "emc2"
+		username: "emc2",
 		email: "esdras@gmail.com",
 		phone: "888-888-8888",
 		password: "tatata",

@@ -29,7 +29,7 @@ class Tasks extends Component {
 
 	completeTask = id => {
 		API.updateComplete(id)
-			.then(res => this.loadTasks())
+			.then(window.location.href = "/leaderboards")
 			.catch(err => console.log(err))
 	}
 	

@@ -1,67 +1,46 @@
-//need to create a class that can be called than extends 
-//with two functions setTime and getTimeLeft
+import React, { PureComponent } from "react";
+import moment from "moment";
 
-//set time_due time
-var timeDue;
+export default class TimeDue extends PureComponent {
+	constructor (props) {
+		super(props)
+		this.state = { endCountdown: false }
+		//this.onTick = this.onTick.bind(this)
+		//this.onCountdownEnd = this.onCountdownEnd.bind(this)
+	}
+  
+timerOnTick = (countdown) => {
+	this.setState({ endCountdown: countdown <= 0 })
+}
+
+timerOnCountdownEnd = () => {
+	console.log("gameofchance")
+}
+
+ render () {
 
 //when the user claims a task and wants to assign a due date
-var taskTime = moment().add(12, 'hours');
-
-//get remaining time until time_due
+  const taskDue = moment(this.props.value);
 //below is function to display how much time is left until task is due
-var msDiff = taskTime.diff(moment());
+	var msDiff = taskDue.diff(moment());
 //600,000 ms in 10 min
-// send text via twilio to users in group when 10 min left to the task due time
-if (msDiff < 600000) {
-
-//every 15 seconds, refresh page
+	if (msDiff < 600000) {
+// send twilio text to users
 }
-var durr = moment.duration(msDiff, 'milliseconds');
-var hours =  Math.floor(d.asHours());
-var min = Math.floor(d.asMinutes()) - hours * 60;
-console.log("hours: " + hours + " min: " + min);
 
-window.onload = function(e){
+	const durationUntilDue = moment.duration(msDiff, 'milliseconds');
+	const hours =  Math.floor(durationUntilDue.asHours());
+	const min = Math.floor(durationUntilDue.asMinutes()) - hours * 60;
+	//console.log("hours: " + hours + " min: " + min);
 
-    var $clock = $('#clock'),
-        eventTime = moment('27-11-2020 08:30:00', 'DD-MM-YYYY HH:mm:ss').unix(),
-        currentTime = moment().unix(),
-        diffTime = eventTime - currentTime,
-        duration = moment.duration(diffTime * 1000, 'milliseconds'),
-        interval = 1000;
+  	// TODO do some moment math to get the time till due in a string
+  	const timeDue = "hours: " + hours + " min: " + min
 
-    // if time to countdown
-    if(diffTime > 0) {
-
-        // Show clock
-        // $clock.show();
-
-        var $d = $('<div class="days" ></div>').appendTo($clock),
-            $h = $('<div class="hours" ></div>').appendTo($clock),
-            $m = $('<div class="minutes" ></div>').appendTo($clock),
-            $s = $('<div class="seconds" ></div>').appendTo($clock);
-
-        setInterval(function(){
-
-            duration = moment.duration(duration.asMilliseconds() - interval, 'milliseconds');
-            var d = moment.duration(duration).days(),
-                h = moment.duration(duration).hours(),
-                m = moment.duration(duration).minutes(),
-                s = moment.duration(duration).seconds();
-
-            d = $.trim(d).length === 1 ? '0' + d : d;
-            h = $.trim(h).length === 1 ? '0' + h : h;
-            m = $.trim(m).length === 1 ? '0' + m : m;
-            s = $.trim(s).length === 1 ? '0' + s : s;
-
-            // show how many hours, minutes and seconds are left
-            $d.text(d);
-            $h.text(h);
-            $m.text(m);
-            $s.text(s);
-
-        }, interval);
-
-    }
-
+  	return (
+  		<div>{ timeDue }</div>
+    );
 };
+}
+
+
+

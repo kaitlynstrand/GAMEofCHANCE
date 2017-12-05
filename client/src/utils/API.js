@@ -31,7 +31,7 @@ export default {
 	},
 
 	saveGroups: function(groupData) {
-		return axios.post("api/groups", groupsData)
+		return axios.post("api/groups", groupData)
 	},
 	
 	securedPing: function() {

@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const flash = require("connect-flash");
 const mongoose = require("mongoose");
+const moment = require("moment");
 const passport = require("passport");
 const Auth0Strategy = require('passport-auth0');
 const path = require("path");
@@ -12,7 +13,6 @@ const routes = require("./routes");
 
 app.use(cors());
 
-app.use(routes)
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));

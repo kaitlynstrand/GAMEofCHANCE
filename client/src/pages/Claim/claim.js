@@ -5,6 +5,7 @@ import { Input, TextArea, FormBtn } from "../../Components/Form"
 import { List, ListItem } from "../../Components/List"
 import Btn from "../../Components/Btn"
 import Header from "../../Components/Header"
+import TimeDue from "../AddTask/taskDue.js"
 
 class Claim extends Component {
 	state = {
@@ -12,7 +13,6 @@ class Claim extends Component {
 		description: "",
 		time_due: "",
 		points: "",
-
 	}
 
 	componentDidMount() {
@@ -25,12 +25,11 @@ class Claim extends Component {
 			this.setState({
 				tasks: res.data
 			})).catch(err => console.log(err))
-
 	}
 
 	claimTask = id => {
 		API.updateClaim(id)
-			.then(res => this.loadTasks())
+			.then(window.location.href = "/tasks")
 			.catch(err => console.log(err))
 	}
 
@@ -49,7 +48,7 @@ class Claim extends Component {
             			<ListItem key={tasks._id}>
             				<tr>
             					<td>{tasks.description}</td>
-            					<td>{tasks.time_due}</td>
+            					<td><TimeDue>{tasks.time_due}</TimeDue></td>
             					<td>{tasks.points}</td>
             					<td><Btn 
             					onClick={() => this.claimTask(tasks._id)}>Claim</Btn></td>

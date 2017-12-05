@@ -10,6 +10,7 @@
     "connect-flash": "^0.1.1",
     "cors": "^2.8.4",
     "moment": "^2.19.3",
+    "moment-es6": "^1.0.0",
     "passport": "^0.4.0",
     "passport-auth0": "^0.6.0",
     "passport-facebook": "^2.1.1",
@@ -18,6 +19,7 @@
     "passport-twitter": "^1.0.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-moment-countdown": "^0.1.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14"
   },

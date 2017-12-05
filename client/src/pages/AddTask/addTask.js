@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Input, TextArea, FormBtn } from "../../Components/Form";
 import API from "../../utils/API"
 import Header from "../../Components/Header"
+import TimeDue from "./taskDue.js"
 
 
 class AddTask extends Component {
@@ -26,7 +27,7 @@ class AddTask extends Component {
     			time_due: this.state.time_due,
     			points: this.state.points
     		})
-    		.then(res => console.log(res))
+    		.then(window.location.href = "/claim")
     		.catch(err => console.log(err))
     	}
     }
@@ -47,6 +48,8 @@ class AddTask extends Component {
 					value={this.state.time_due}
 					name="time_due"
 					onChange={this.handleInputChange}/>
+					<TimeDue value={this.state.time_due}>
+</TimeDue>
 				<label className="label">Points</label>
 					<Input 
 					type="tel"

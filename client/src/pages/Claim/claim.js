@@ -6,8 +6,9 @@ import { List, ListItem } from "../../Components/List"
 import Btn from "../../Components/Btn"
 import Header from "../../Components/Header"
 import Footer from "../../Components/Footer"
-import "../Tasks/main.css"
+import TimeDue from "../AddTask/taskDue.js"
 import AddTask from "../AddTask/addTask.js"
+import "../Tasks/main.css"
 
 class Claim extends Component {
 	state = {

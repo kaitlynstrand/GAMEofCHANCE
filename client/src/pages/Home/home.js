@@ -31,7 +31,7 @@ const { isAuthenticated } = this.props.auth;
         {
           !isAuthenticated() && (
             <div className="container column">
-              <h5>ReactiveSearch Auth0 Example</h5>
+              <h5>You Are About To Enter The....Game of Chance!</h5>
               <h5>
                 You are not logged in! Please{' '}
                 <a

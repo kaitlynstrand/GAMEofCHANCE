@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Nav from "../../Components/Nav"
 import API from "../../utils/API";
-import { Input, TextArea, FormBtn } from "../../Components/Form"
+import { FormBtn } from "../../Components/Form"
 import { List, ListItem } from "../../Components/List"
 import Btn from "../../Components/Btn"
 import TimeDue from "../AddTask/taskDue.js"
@@ -14,7 +14,7 @@ class Tasks extends Component {
 		tasks: [],
 		description: "",
 		time_due: "",
-		points: "",
+		points: ""
 	}
 
 	componentDidMount() {
@@ -30,7 +30,7 @@ class Tasks extends Component {
 
 	}
 
-	completeTask = id => {
+	completeTask = (id) => {
 		API.updateComplete(id)
 			.then(window.location.href = "/tasks")
 			.catch(err => console.log(err))

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, TextArea, FormBtn } from "../../Components/Form";
+import { Input, FormBtn } from "../../Components/Form";
 import API from "../../utils/API"
 import Header from "../../Components/Header"
 import Footer from "../../Components/Footer"

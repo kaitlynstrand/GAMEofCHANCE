@@ -29,6 +29,7 @@ timerOnCountdownEnd = () => {
 }
 
 	const durationUntilDue = moment.duration(msDiff, 'milliseconds');
+
 	const hours =  Math.floor(durationUntilDue.asHours());
 	const min = Math.floor(durationUntilDue.asMinutes()) - hours * 60;
 	const sec = Math.floor(durationUntilDue.asSeconds()) - hours * 60 * 60 - min * 60;

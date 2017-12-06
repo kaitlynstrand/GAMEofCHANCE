@@ -1,0 +1,15 @@
+@media (max-width: 375px) {
+#addTask {
+	position:fixed;
+	bottom:10px;
+	width:200px;
+	left:87.5px; 
+}
+#addTask a {
+	color:black;
+}
+#task {
+	background-color:#D0011B;
+	color:white;
+}
+}

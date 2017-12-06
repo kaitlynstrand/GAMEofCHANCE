@@ -34,7 +34,6 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-
   remove: (req, res) => {
     db.User
       .findById({ _id: req.params.id })
@@ -42,9 +41,4 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  login: (req, res) => {
-    db.User
-      
-
-  }
 };

@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Input, FormBtn } from "../../Components/Form";
 import API from "../../utils/API"
 import Header from "../../Components/Header"
+import Footer from "../../Components/Footer"
 import TimeDue from "./taskDue.js"
+import "./addTask.css"
 
 
 class AddTask extends Component {
@@ -34,34 +36,39 @@ class AddTask extends Component {
 
 	render() {
 		return (
-			<div>
+		<div>
 			<Header></Header>
 			<div className="container">
+				<br></br>
 				<label className="label">Description</label>
 					<Input 
 					value={this.state.description}
 					name="description"
 					onChange={this.handleInputChange} />
+				<br></br>
 				<label className="label">Time Due</label>
 					<Input
 					type="date"
 					value={this.state.time_due}
 					name="time_due"
 					onChange={this.handleInputChange}/>
-					<TimeDue value={this.state.time_due}>
-</TimeDue>
+				<br></br>
 				<label className="label">Points</label>
 					<Input 
 					type="tel"
 					value={this.state.points}
 					name="points"
 					onChange={this.handleInputChange}/>
-				<FormBtn
-				onClick={this.handleFormSubmit}>
-					Submit
-				</FormBtn>
 			</div>
-			</div>
+			 	<Footer>
+            		<div className="buttons has-addons is-right">
+						<FormBtn id="addTask"
+							onClick={this.handleFormSubmit}>
+							Submit
+						</FormBtn>
+					</div>
+            	</Footer>
+            </div>
 		)
 	}
 }

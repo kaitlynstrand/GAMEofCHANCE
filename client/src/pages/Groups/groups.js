@@ -25,18 +25,6 @@ class Group extends Component {
 			.catch(err => console.log(err))
 	}
 
-	// displayGroups (input) {
-	// 	console.log(input)
-	// 	if (!input) {
-	// 		return Promise.resolve({ options: [] });
-	// 	}
-
-	// 	.then((response) => response.json())
-	// 	.then((json) => {
-	// 		return { options: json };
-	// 	})
-	// }
-
 	handleInputChange = event => {
     	const { name, value } = event.target;
     		this.setState({

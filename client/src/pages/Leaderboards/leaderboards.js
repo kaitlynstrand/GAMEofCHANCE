@@ -5,6 +5,8 @@ import { Input, TextArea, FormBtn } from "../../Components/Form"
 import { List, ListItem } from "../../Components/List"
 import Btn from "../../Components/Btn"
 import Header from "../../Components/Header"
+import Footer from "../../Components/Footer"
+import "../Tasks/main.css"
 
 class Leaderboards extends Component {
 	state = {
@@ -28,11 +30,7 @@ class Leaderboards extends Component {
 	render() {
 		return (
 			<div>
-			<Header>
-				<div className="buttons has-addons is-right">
-					<FormBtn><a href="/addTask">Add Task</a></FormBtn>
-				</div>
-			</Header>
+			<Header />
 			<div className="container">
             	<Nav />
             	<List>
@@ -46,6 +44,11 @@ class Leaderboards extends Component {
             			))}
       			</List>
             </div>
+            <Footer>
+            	<div className="buttons has-addons is-right">
+					<FormBtn id="addTask"><a href="/addTask">Add Task</a></FormBtn>
+				</div>
+            </Footer>
             </div>
 		)
 	}

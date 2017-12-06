@@ -6,6 +6,8 @@ import { List, ListItem } from "../../Components/List"
 import Btn from "../../Components/Btn"
 import Header from "../../Components/Header"
 import TimeDue from "../AddTask/taskDue.js"
+import Footer from "../../Components/Footer"
+import "../Tasks/main.css"
 
 class Claim extends Component {
 	state = {
@@ -29,18 +31,14 @@ class Claim extends Component {
 
 	claimTask = id => {
 		API.updateClaim(id)
-			.then(window.location.href = "/tasks")
+			.then(window.location.href = "/claim")
 			.catch(err => console.log(err))
 	}
 
 	render() {
 		return (
 			<div>
-			<Header>
-				<div className="buttons has-addons is-right">
-					<FormBtn><a href="/addTask">Add Task</a></FormBtn>
-				</div>
-			</Header>
+			<Header />
 			<div className="container">
             	<Nav />
             	<List>
@@ -48,15 +46,22 @@ class Claim extends Component {
             			<ListItem key={tasks._id}>
             				<tr>
             					<td>{tasks.description}</td>
-            					<td><TimeDue>{tasks.time_due}</TimeDue></td>
+								<td><TimeDue value={tasks.time_due}>
+									</TimeDue></td>
             					<td>{tasks.points}</td>
-            					<td><Btn 
+            					
+            					<td><Btn id="task"
             					onClick={() => this.claimTask(tasks._id)}>Claim</Btn></td>
             				</tr>
             			</ListItem>
             			))}
       			</List>
             </div>
+            <Footer>
+            	<div className="buttons has-addons is-right">
+					<FormBtn id="addTask"><a href="/addTask">Add Task</a></FormBtn>
+				</div>
+            </Footer>
             </div>
 		)
 	}

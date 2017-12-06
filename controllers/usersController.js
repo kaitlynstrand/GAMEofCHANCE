@@ -27,6 +27,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  updatePoints: (req, res) => {
+    db.User
+      .findOneAndUpdate({ _id: req.params.id }, {points_earned: points_earned += points})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   remove: (req, res) => {
     db.User
       .findById({ _id: req.params.id })

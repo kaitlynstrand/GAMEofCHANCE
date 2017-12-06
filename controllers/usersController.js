@@ -30,7 +30,7 @@ module.exports = {
 
   updatePoints: (req, res) => {
     db.User
-      .findOneAndUpdate({ _id: req.params.id }, {points_earned})
+      .findOneAndUpdate({ _id: req.params.id }, {points_earned: points_earned += points})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

@@ -11,7 +11,7 @@ class Tasks extends Component {
 		tasks: [],
 		description: "",
 		time_due: "",
-		points: "",
+		points: ""
 	}
 
 	componentDidMount() {
@@ -27,7 +27,7 @@ class Tasks extends Component {
 
 	}
 
-	completeTask = id => {
+	completeTask = (id) => {
 		API.updateComplete(id)
 			.then(window.location.href = "/leaderboards")
 			.catch(err => console.log(err))

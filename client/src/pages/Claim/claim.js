@@ -6,6 +6,7 @@ import { List, ListItem } from "../../Components/List"
 import Btn from "../../Components/Btn"
 import Header from "../../Components/Header"
 import TimeDue from "../AddTask/taskDue.js"
+import AddTask from "../AddTask/addTask.js"
 
 class Claim extends Component {
 	state = {
@@ -48,7 +49,7 @@ class Claim extends Component {
             			<ListItem key={tasks._id}>
             				<tr>
             					<td>{tasks.description}</td>
-            					<td><TimeDue>{tasks.time_due}</TimeDue></td>
+            					<td><TimeDue value={ tasks.time_due }></TimeDue></td>
             					<td>{tasks.points}</td>
             					<td><Btn 
             					onClick={() => this.claimTask(tasks._id)}>Claim</Btn></td>

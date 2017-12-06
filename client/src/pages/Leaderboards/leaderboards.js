@@ -9,7 +9,7 @@ class Leaderboards extends Component {
 	state = {
 		users: [],
 		username: "",
-		points_earned: "",
+		points_earned: ""
 	}
 
 	componentDidMount() {

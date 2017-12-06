@@ -37,7 +37,7 @@ export default class Auth {
         this.setSession(authResult);
         history.replace('/tasks');
       } else if (err) {
-        history.replace('/tasks');
+        history.replace('/callback');
         console.log(err);
         alert(`Error: ${err.error}. Check console for more details.`);
       }

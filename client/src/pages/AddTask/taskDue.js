@@ -31,10 +31,11 @@ timerOnCountdownEnd = () => {
 	const durationUntilDue = moment.duration(msDiff, 'milliseconds');
 	const hours =  Math.floor(durationUntilDue.asHours());
 	const min = Math.floor(durationUntilDue.asMinutes()) - hours * 60;
+	const sec = Math.floor(durationUntilDue.asSeconds()) - hours * 60 * 60 - min * 60;
 	//console.log("hours: " + hours + " min: " + min);
 
   	// TODO do some moment math to get the time till due in a string
-  	const timeDue = "hours: " + hours + " min: " + min
+  	const timeDue = "hours: " + hours + " min: " + min + " sec: " + sec
 
   	return (
   		<div>{ timeDue }</div>

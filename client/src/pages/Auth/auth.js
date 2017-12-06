@@ -3,19 +3,16 @@ import { AUTH_CONFIG } from './auth0-variables.js.example';
 import history from '../../history';
 
 export default class Auth {
-  userProfile;
-  tokenRenewalTimeout;
-
-
   auth0 = new auth0.WebAuth({
-    domain: 'gameofchance.auth0.com',
-    clientID: '9rIT0eKomzmv7q47VSRbySpfONYGL5e9',
-    redirectUri: 'http://localhost:3000/callback',
-    silentAuthRedirect: 'http://localhost:3001/silent',
-    audience: 'https://gameofchance.auth0.com/userinfo',
+    domain: AUTH_CONFIG.domain,
+    clientID: AUTH_CONFIG.clientId,
+    redirectUri: AUTH_CONFIG.callbackUrl,
+    audience: AUTH_CONFIG.apiUrl,
     responseType: 'token id_token',
     scope: 'openid profile read:messages'
   });
+
+  userProfile;
 
   constructor() {
     this.login = this.login.bind(this);
